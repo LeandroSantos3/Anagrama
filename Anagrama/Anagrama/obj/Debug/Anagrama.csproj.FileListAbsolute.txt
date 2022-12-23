@@ -1,0 +1,6 @@
+C:\Users\leand\OneDrive\Documentos\3ºAno 1ºSemetre\P3\Anagrama\Anagrama\Anagrama\obj\Debug\Anagrama.csprojResolveAssemblyReference.cache
+C:\Users\leand\OneDrive\Documentos\3ºAno 1ºSemetre\P3\Anagrama\Anagrama\Anagrama\bin\Debug\Anagrama.exe.config
+C:\Users\leand\OneDrive\Documentos\3ºAno 1ºSemetre\P3\Anagrama\Anagrama\Anagrama\bin\Debug\Anagrama.exe
+C:\Users\leand\OneDrive\Documentos\3ºAno 1ºSemetre\P3\Anagrama\Anagrama\Anagrama\bin\Debug\Anagrama.pdb
+C:\Users\leand\OneDrive\Documentos\3ºAno 1ºSemetre\P3\Anagrama\Anagrama\Anagrama\obj\Debug\Anagrama.exe
+C:\Users\leand\OneDrive\Documentos\3ºAno 1ºSemetre\P3\Anagrama\Anagrama\Anagrama\obj\Debug\Anagrama.pdb
