@@ -3,8 +3,7 @@
  * User: leand
  * Date: 23/12/2022
  * Time: 19:57
- * 
- * To change this template use Tools | Options | Coding | Edit Standard Headers.
+ *  
  */
 using System;
 using System.Collections.Generic;
@@ -29,9 +28,8 @@ namespace Anagrama
 		 
 	     do
 		  {
-	     	opcao=menu.MenuSimples();
-		   //Console.ForegroundColor= ConsoleColor.Red;
-		   switch (opcao) {
+     		opcao=menu.MenuSimples();		   
+		   	switch (opcao) {
 		 	  case '1':
 		   		Console.WriteLine("Teste do anagrama, com repeticoes");
 		   		Console.Write("Insira a palavra para fazer o jogo: ");
@@ -62,5 +60,5 @@ namespace Anagrama
 		 Console.ReadKey(true);
 		}
 	
-	} // fim classe Program
-} // fim namespace
+	} 
+} 

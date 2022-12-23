@@ -4,7 +4,6 @@
  * Date: 23/12/2022
  * Time: 18:13
  * 
- * To change this template use Tools | Options | Coding | Edit Standard Headers.
  */
 // C# program to implement
 // the above approach
