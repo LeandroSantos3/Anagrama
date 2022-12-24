@@ -15,20 +15,13 @@ using System.Collections.Generic;
 namespace Anagrama
 {
 	public class Permutacao{
-		
-		//static int count =0;
-   
+	   
 static void permute(String s,
                     String answer)
 {   
-//    if (s.Length <=2 || s.Length >=11)
-//    {
-//        Console.Write(answer + " palavra entre 3~10 caracteres ");
-//        return;
-//    }
-//    
+  
     if(s.Length==0){
-    	Console.Write(answer + "  ");
+    	Console.Write(answer + "  ");    	
     }
     
       
@@ -40,17 +33,17 @@ static void permute(String s,
         String rest = left_substr + right_substr;
         permute(rest, answer + ch);
         
+        
     }
-    //count++;
+    
 }
 		
  public void PermutacaoRepeticoes(String palavra )
  {
-    String resposta="";
+ 	String resposta="";
       
     Console.Write("\n Anagrama com repiticoes :\n ");
     permute(palavra, resposta);
-    
 				
 }
  
@@ -59,14 +52,20 @@ static void permute(String s,
     String resposta="";
       
     Console.Write("\n Anagrama sem repiticoes :\n ");
-    permute(palavra, resposta);
-    
+    permute(palavra, resposta);    
 				
 }
-// public void Contar()
-// {
-// 	Console.WriteLine("\nO numero de permutacoes{0} " , count);
-// }
+ 
+ public int Contar(String palavra)
+ {
+ 	int resul =1;
+ 	for(int i = 1; i<palavra.Length; i++)
+ 	{
+ 		resul = resul *i;
+	}
+ 	return resul;
+ }
+
   
 
 }
