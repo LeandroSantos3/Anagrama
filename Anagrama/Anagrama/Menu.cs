@@ -8,6 +8,8 @@
 using System;
 
 namespace Anagrama
+	
+		//Menu incorporado dos laboratorios feito em aulas
 {
 	/// <summary>
 	/// Menu simples que irá permitir que o usuario faca a interacao com o programa - Anagrama 
@@ -26,7 +28,7 @@ namespace Anagrama
 		 for (int i=0;i<lista.Length;i++)
 		 	opcao[i]=lista[i];
 		}
-
+		
 		// mostra o menu em consola e devolve a opção escolhida (na forma de int)
 		// só sai depois de digitada uma das opçoes
 		public char MenuSimples()
@@ -34,7 +36,7 @@ namespace Anagrama
 			ConsoleKeyInfo tecla;
 		 string retornos = retorno.Substring(0,opcao.Length);		
 		 Console.Clear();		 
-		 Console.WriteLine("\nTeste Anagrama - trab pratico 1:\n");
+		 Console.WriteLine("\nTeste Anagrama - trabalho pratico 1:\n");
 		 for (int i=0;i<this.opcao.Length;i++)
 		 	Console.WriteLine(" {0}... {1}",retorno[i],opcao[i]);
 		 Console.Write("\nDigite a sua opção: ");

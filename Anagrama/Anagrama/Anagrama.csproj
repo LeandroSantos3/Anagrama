@@ -46,6 +46,11 @@
     <None Include="app.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ArvAVL.cs" />
+    <Compile Include="ArvBinP.cs" />
+    <Compile Include="Dicionario.cs" />
+    <Compile Include="Nodo.cs" />
+    <Compile Include="ParChaveValor.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Menu.cs" />
     <Compile Include="Permutacao.cs" />

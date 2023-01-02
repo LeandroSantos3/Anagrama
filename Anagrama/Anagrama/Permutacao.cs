@@ -25,9 +25,9 @@ public void PermutacaoComRepeticoes(String s, String answer)
     if(s.Length==0){
 			
     		Console.Write(answer + "  ");
-    		//lstPermutacao.Add(answer);
+//    		lstPermutacao.Add(answer);
 			Result++;			
-    		return;   	   	
+    		   	   	
     }			
      
     for(int i = 0 ;i < s.Length; i++)
@@ -38,7 +38,7 @@ public void PermutacaoComRepeticoes(String s, String answer)
         String rest = left_substr + right_substr;  
         PermutacaoComRepeticoes(rest, answer + ch);             
     }  
-    
+//    return lstPermutacao;
 }
 		
 
@@ -60,8 +60,7 @@ public void PermutacaoSemRepeticoes(String s, String answer, List<String>lista) 
         String left_substr = s.Substring(0, i);
         String right_substr = s.Substring(i + 1);
         String rest = left_substr + right_substr;  
-        PermutacaoSemRepeticoes(rest, answer + ch,lista );
-					
+        PermutacaoSemRepeticoes(rest, answer + ch,lista );					
   	} 
   }
 
@@ -77,8 +76,7 @@ public void PermutacaoSemRepeticoes(String s, String answer, List<String>lista) 
  	Result=0; // senao sempre é ta continjua ta conta e soma
  	return;
  	
- }
-	
+ }	
  
  /// <summary>
 	/// Metodo que permita fazer a validacao para saber se a palavra esta compreendido entre 3 ~ 11 caracteres 
