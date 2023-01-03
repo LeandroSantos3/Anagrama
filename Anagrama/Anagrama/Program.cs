@@ -7,6 +7,7 @@
  */
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 
 namespace Anagrama
 {
@@ -26,17 +27,18 @@ private static string[] lstMenu = {
 			Menu menu = new Menu(lstMenu);
 			char opcao;
 			Permutacao perm = new Permutacao();
-			Dicionario dicionario = new Dicionario();
-			List<String>listaComparacao = new List<String>();
-			List<String>listaCarregada = new List<String>();
-//			List<String>listaNova = new List<String>();
-//			List<String>listaNova = new List<String>();
-			//ArvAVL<int,String> arvore = new ArvAVL<int,String>();
-			
+			Dicionario dicionario = new Dicionario(); 
+			List<String>listaComparacao = new List<String>(); //lista que sera completada com as permutacoes feitas de acordo com as palavrass do user
+			List<String>listaCarregada = new List<String>(); //lista que sera completada com os dados do dicionário
+
+			Stopwatch stopwatch0 = Stopwatch.StartNew();
 			
 			if(dicionario.CarregarDicionario()!=null)
+			{
+				stopwatch0.Stop();
 				Console.WriteLine("Teste de Anagrama\n A criar dicionario ... Carregado com {0} palavras de {1} no total", dicionario.permutationCount, dicionario.totalDicionario);
-				
+				Console.WriteLine("\nTempo de execução total: {0}", stopwatch0.Elapsed);						
+			}
           		Menu.TeclaParaContinuar();          	
           	
           	do {
@@ -44,50 +46,65 @@ private static string[] lstMenu = {
 				
 				switch (opcao) {
 					case '1':
-						Console.WriteLine("Teste do anagrama, com repeticoes");
-						Console.Write("Insira a palavra para fazer o jogo: ");
+						Console.WriteLine("## Teste Anagrama ##\n Permutações com repeticoes ****");
+						Console.Write("Insira a palavra para fazer as combinacoes :__ ");
 						String palavra = Console.ReadLine();		   		
-		   		
+		   				
+						Stopwatch stopwatch = Stopwatch.StartNew(); //inicicar nova contagem
 		   		
 						if (perm.Validar(palavra) == true) {
 							Console.Write("\n Anagrama com repiticoes :\n ");		   			  			
 							perm.PermutacaoComRepeticoes(palavra, "");		   			
 							perm.Contar();
+							
+							stopwatch.Stop();//parar a contagem
+							Console.WriteLine("\nTempo de execução total: {0}", stopwatch.Elapsed);//printar o tempo da contagem
 						}
 						break;
 					case '2':
-						Console.WriteLine("Teste do anagrama, sem repeticoes");
-						Console.Write("Insira a palavra para fazer o jogo: ");
-						String palavra1 = Console.ReadLine();		   		
-		   		
+						Console.WriteLine("## Teste Anagrama ##\n Permutações sem repeticoes ****");
+						Console.Write("Insira a palavra para fazer as combinacoes:__ ");
+						String palavra1 = Console.ReadLine();
+						
+		   				Stopwatch stopwatch2 = Stopwatch.StartNew();
+		   				
 						if (perm.Validar(palavra1) == true) {
 							Console.Write("\n Anagrama sem repiticoes :\n ");		   			  			
 							perm.PermutacaoSemRepeticoes(palavra1, "",new List<String>());
 							perm.Contar();
+							
+							stopwatch2.Stop();
+							Console.WriteLine("\nTempo de execução total: {0}", stopwatch2.Elapsed);
 						}
 						break;
 					case '3':				
-						
-						Console.Write("Insira a palavra para fazer o jogo: ");
+						Console.WriteLine("## Teste Anagrama ##\n Apos permutacao verificar a sua existencia no Dicionario Carregado ****");
+						Console.Write("Insira a palavra para fazer as combinacoes e verificar o resultado no Dicionario:__ ");
 						String palavra3 = Console.ReadLine();
 						
-						
+						Stopwatch stopwatch3 = Stopwatch.StartNew();						
 						
 						if(perm.Validar(palavra3) == true){
 							
-						perm.PermutacaoSemRepeticoes(palavra3,"",listaComparacao);
+						perm.PermutacaoSemRepeticoes(palavra3,"",listaComparacao); //já neste quero que seja carregado para uma lista especifica, que será usada para posterior consulta
 						perm.Contar();
 						listaCarregada = dicionario.CarregarDicionario();
-						List<String>listaNova = dicionario.PermutacoesEmDicionario(listaComparacao);												
-							
-						Console.WriteLine("lista Carregada tem total de "+ listaCarregada.Count +" palavras");
+						List<String>listaNova = dicionario.PermutacoesEmDicionario(listaComparacao); //essa lista seria carregado com os resultados da busca binaria na arvore AVL
+						
+						//Debug para eu ver todos as listas e entender melhor o funcionamento interno
+						
+						Console.WriteLine("\n\nlista Carregada tem total de "+ listaCarregada.Count +" palavras");
 						Console.WriteLine("lista Comparacao tem total de "+ listaComparacao.Count +" palavras");
 						Console.WriteLine("lista nova tem total de "+ listaNova.Count +" palavras encontradas no Dicionario:\n");
 												
-						foreach (var item in listaNova) {
+						foreach (var item in listaNova) 
+						{
 							Console.Write (item + "  /");					
-							}
-						listaComparacao.Clear();
+						}
+						
+						stopwatch3.Stop();
+						Console.WriteLine("\n\nTempo de execução total: {0}", stopwatch3.Elapsed);
+						listaComparacao.Clear(); //tenho que limpar a lista de permutacao senão ele sempre será carregado com os dados da pesquisa anterior					
 						
 						}
 											
