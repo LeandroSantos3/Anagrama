@@ -85,7 +85,7 @@ private static string[] lstMenu = {
 						Stopwatch stopwatch3 = Stopwatch.StartNew();						
 						
 						if(perm.Validar(palavra3) == true){
-							
+						Console.WriteLine("Forarm Geradas essas permutações, depois será analizado se existe no Dicionario");
 						perm.PermutacaoSemRepeticoes(palavra3,"",listaComparacao); //já neste quero que seja carregado para uma lista especifica, que será usada para posterior consulta
 						perm.Contar();
 						listaCarregada = dicionario.CarregarDicionario();

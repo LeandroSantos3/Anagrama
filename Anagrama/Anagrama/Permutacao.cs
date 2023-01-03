@@ -78,6 +78,7 @@ namespace Anagrama
 		    String rest = left_substr + right_substr;  
 		    PermutacaoSemRepeticoes(rest, answer + ch,lista );					
 			} 
+				//caso optasse poderia retornar a lista aqui e assim não teria necessidade de criar uma lista do outro lado, mas achei mas desafiador assim!! :)
 		}
 		
 		/// <summary>
