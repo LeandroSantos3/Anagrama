@@ -18,7 +18,9 @@ namespace Anagrama
 	/// Classe Dicionario será o responsável para criar e carregar os ficheiros de texto com as palavras
 	/// </summary>
 	public class Dicionario
-	{		
+	{	
+		ArvAVL<int, string> arvore = new ArvAVL<int, String>();	
+		
 		public int totalDicionario=0;
 		public int permutationCount = 0;
 		private int Result 
@@ -33,9 +35,9 @@ namespace Anagrama
 		
 		public List<String> CarregarDicionario(){
 			
-			List<String> dicionario = new List<String>();
-			ArvAVL<int,String> arvore = new ArvAVL<int,String>();
+			List<String> dicionario = new List<String>();			
 			List<String> lstDicionario = new List<String>();
+			//ArvAVL<int,String> arvore = new ArvAVL<int,String>();
 				
 		try {
 				
@@ -64,6 +66,66 @@ namespace Anagrama
 		 	Console.WriteLine("\n *** Erro! ->" + e.Message + "***");
 		 	return null;
 		 }	
-		}		
-	}
+		}
+		
+		
+		public List<String> PermutacoesEmDicionario(List<String> match) {
+	  // Create a new, modifiable list
+	  List<String> listaNova = new List<String>();
+	  // Iterate through each string in the input list
+	  foreach (String item in match) {
+	    // Search for the string in the dictionary using the 'arvore' object
+	    ParChaveValor<int, String> valor;
+	    bool existe = arvore.Find(item.GetHashCode(), out valor);
+	
+	    // If the string is found in the dictionary, add it to the new list
+	    if (existe) {
+	    	listaNova.Add(valor.valor.ToString());
+	    }
+	  }
+
+  // Return the new, modifiable list
+  return listaNova;
+}
+
+		
+		
+		
+		
+//		public List<String> PermutacoesEmDicionario(List<String> lista) {
+//  
+//			List<String> listaNova = new List<String>(); 
+//  foreach (String item in lista) {
+//    
+//    ParChaveValor<int, String> valor;
+//    bool existe = arvore.Find(item.GetHashCode(), out valor);
+//
+//   
+//    if (existe) {
+//    	listaNova.Add(valor.valor);
+//    }
+//  }
+//		
+//
+//  return listaNova;
+//		}
+}
+		
+
+//		public List<String> PermutacoesEmDicionario(List<String>lista){
+//			
+//			ParChaveValor<int, String> valor;			
+//			List<String> listaNova = new List<String>();
+//			 
+//			foreach(String item in lista)
+//				            {
+//				                bool existe = arvore.Find(item.GetHashCode(), out valor);
+//				                if (existe)
+//				                {
+//				                	lista.Add(valor.valor.ToString());
+//				                }
+//				            }
+//			return listaNova;			
+//		}
+//	}
 }

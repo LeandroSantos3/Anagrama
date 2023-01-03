@@ -135,7 +135,7 @@ public enum Travessia {InOrder=1, PreOrder=2, PosOrder=3, EmLinha=4 }
 		/// <returns>True se encontrou</returns>
 		public bool Find(TKey chave,out ParChaveValor<TKey,TValue> saida)
 		{saida = default(ParChaveValor<TKey, TValue>);
-		 return PesquisarRecursivamente(this.raiz,chave,ref saida);			
+		 return PesquisarRecursivamente(this.raiz,chave,ref saida);
 		}
 		
 		/// <summary>

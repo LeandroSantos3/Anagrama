@@ -27,7 +27,9 @@ private static string[] lstMenu = {
 			char opcao;
 			Permutacao perm = new Permutacao();
 			Dicionario dicionario = new Dicionario();
+			List<String>listaComparacao = new List<String>();
 			List<String>listaCarregada = new List<String>();
+			//ArvAVL<int,String> arvore = new ArvAVL<int,String>();
 			
 			
 			if(dicionario.CarregarDicionario()!=null)
@@ -64,34 +66,47 @@ private static string[] lstMenu = {
 						break;
 					case '3':
 						
+						
 						Console.Write("Insira a palavra para fazer o jogo: ");
 						String palavra3 = Console.ReadLine();
+						
+						
 						if(perm.Validar(palavra3) == true){
 							
-							perm.PermutacaoSemRepeticoes(palavra3,"",new List<String>());
+						perm.PermutacaoSemRepeticoes(palavra3,"",listaComparacao);
 						perm.Contar();
 						listaCarregada = dicionario.CarregarDicionario();
+						List<String>listaNova =  dicionario.PermutacoesEmDicionario(listaComparacao);
 						
-//							Console.WriteLine(rep.Count);
-//						listaCarregada = perm.PermutacaoComRepeticoes(palavra3,"");
-						
-						if(listaCarregada.Count==null)
+						if(listaCarregada.Count==null && listaComparacao.Count==null && listaNova.Count==null)
 								Console.WriteLine("\nficheiro vazio");
 						else{
-							Console.WriteLine("dicionario no momento tem total de "+ listaCarregada.Count +" palavras");
-//							foreach (var element in listaCarregada) {
-//								
-//								if(listaCarregada.Contains(test))
-//								   Console.Write("Achei um");
-//							}
-							
+//								for (int i = 0; i < listaCarregada.Count; i++)
+//							      {
+//							         for (int j = 0; j < listaComparacao.Count; j++)
+//							         {
+//							            if (listaCarregada[i] == listaComparacao[j])
+//							            {
+//							            	listaNova.Add(listaCarregada[i]);
+//							            }
+//							         }
+//							      }	
+	
+							//dicionario.PermutacoesEmDicionario(listaCarregada,listaComparacao);
+																
+							}
+						Console.WriteLine("lista Carregada tem total de "+ listaCarregada.Count +" palavras");
+						Console.WriteLine("lista Comparacao tem total de "+ listaComparacao.Count +" palavras");
+						Console.WriteLine("lista nova tem total de "+ listaNova.Count +" palavras encontradas no Dicionario:\n");
+						
+						
+						foreach (var item in listaNova) {
+							Console.Write (item + "  /");							
 						}
 						
-						//Console.WriteLine(" ");
 						
-							
 						}
-						
+											
 						break;		 			   
 					case '4':
 						Console.WriteLine("Por fazer...");
@@ -108,5 +123,6 @@ private static string[] lstMenu = {
 			Console.ReadKey(true);
 		}
 	}
+
 }
 
