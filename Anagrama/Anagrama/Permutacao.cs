@@ -24,7 +24,7 @@ public void PermutacaoComRepeticoes(String s, String answer)
 	
     if(s.Length==0){
 			
-    		Console.Write(answer + "  ");
+    		Console.Write(answer + "  /");
 //    		lstPermutacao.Add(answer);
 			Result++;			
     		   	   	
@@ -47,7 +47,7 @@ public void PermutacaoSemRepeticoes(String s, String answer, List<String>lista) 
 	if (s.Length == 0){
 		
 	if(!lista.Contains(answer)){
-	   	Console.Write(answer + "    ");
+	   	Console.Write(answer + "  /");
         Result++;
         lista.Add(answer);
         return;

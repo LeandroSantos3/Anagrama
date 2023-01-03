@@ -29,7 +29,6 @@ namespace Anagrama
 	
 		public Dicionario()
 		{
-//			
 		}
 
 		
@@ -70,6 +69,7 @@ namespace Anagrama
 		
 		
 		public List<String> PermutacoesEmDicionario(List<String> match) {
+		
 	  // Create a new, modifiable list
 	  List<String> listaNova = new List<String>();
 	  // Iterate through each string in the input list
@@ -77,55 +77,14 @@ namespace Anagrama
 	    // Search for the string in the dictionary using the 'arvore' object
 	    ParChaveValor<int, String> valor;
 	    bool existe = arvore.Find(item.GetHashCode(), out valor);
-	
+	    
 	    // If the string is found in the dictionary, add it to the new list
 	    if (existe) {
 	    	listaNova.Add(valor.valor.ToString());
 	    }
-	  }
-
-  // Return the new, modifiable list
+	  } 
   return listaNova;
 }
 
-		
-		
-		
-		
-//		public List<String> PermutacoesEmDicionario(List<String> lista) {
-//  
-//			List<String> listaNova = new List<String>(); 
-//  foreach (String item in lista) {
-//    
-//    ParChaveValor<int, String> valor;
-//    bool existe = arvore.Find(item.GetHashCode(), out valor);
-//
-//   
-//    if (existe) {
-//    	listaNova.Add(valor.valor);
-//    }
-//  }
-//		
-//
-//  return listaNova;
-//		}
-}
-		
-
-//		public List<String> PermutacoesEmDicionario(List<String>lista){
-//			
-//			ParChaveValor<int, String> valor;			
-//			List<String> listaNova = new List<String>();
-//			 
-//			foreach(String item in lista)
-//				            {
-//				                bool existe = arvore.Find(item.GetHashCode(), out valor);
-//				                if (existe)
-//				                {
-//				                	lista.Add(valor.valor.ToString());
-//				                }
-//				            }
-//			return listaNova;			
-//		}
-//	}
-}
+	}
+		}

@@ -29,6 +29,8 @@ private static string[] lstMenu = {
 			Dicionario dicionario = new Dicionario();
 			List<String>listaComparacao = new List<String>();
 			List<String>listaCarregada = new List<String>();
+//			List<String>listaNova = new List<String>();
+//			List<String>listaNova = new List<String>();
 			//ArvAVL<int,String> arvore = new ArvAVL<int,String>();
 			
 			
@@ -64,11 +66,11 @@ private static string[] lstMenu = {
 							perm.Contar();
 						}
 						break;
-					case '3':
-						
+					case '3':				
 						
 						Console.Write("Insira a palavra para fazer o jogo: ");
 						String palavra3 = Console.ReadLine();
+						
 						
 						
 						if(perm.Validar(palavra3) == true){
@@ -76,34 +78,16 @@ private static string[] lstMenu = {
 						perm.PermutacaoSemRepeticoes(palavra3,"",listaComparacao);
 						perm.Contar();
 						listaCarregada = dicionario.CarregarDicionario();
-						List<String>listaNova =  dicionario.PermutacoesEmDicionario(listaComparacao);
-						
-						if(listaCarregada.Count==null && listaComparacao.Count==null && listaNova.Count==null)
-								Console.WriteLine("\nficheiro vazio");
-						else{
-//								for (int i = 0; i < listaCarregada.Count; i++)
-//							      {
-//							         for (int j = 0; j < listaComparacao.Count; j++)
-//							         {
-//							            if (listaCarregada[i] == listaComparacao[j])
-//							            {
-//							            	listaNova.Add(listaCarregada[i]);
-//							            }
-//							         }
-//							      }	
-	
-							//dicionario.PermutacoesEmDicionario(listaCarregada,listaComparacao);
-																
-							}
+						List<String>listaNova = dicionario.PermutacoesEmDicionario(listaComparacao);												
+							
 						Console.WriteLine("lista Carregada tem total de "+ listaCarregada.Count +" palavras");
 						Console.WriteLine("lista Comparacao tem total de "+ listaComparacao.Count +" palavras");
 						Console.WriteLine("lista nova tem total de "+ listaNova.Count +" palavras encontradas no Dicionario:\n");
-						
-						
+												
 						foreach (var item in listaNova) {
-							Console.Write (item + "  /");							
-						}
-						
+							Console.Write (item + "  /");					
+							}
+						listaComparacao.Clear();
 						
 						}
 											
@@ -117,7 +101,7 @@ private static string[] lstMenu = {
 		 	 
 				}
 				if (opcao != '5' && dicionario.CarregarDicionario()!=null)
-					Menu.TeclaParaContinuar();
+								Menu.TeclaParaContinuar();
 			} while (opcao != '5');		 
 			Console.WriteLine("\nPrograma a encerrar...");
 			Console.ReadKey(true);
